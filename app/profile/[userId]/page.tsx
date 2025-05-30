@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState, FormEvent } from 'react';
-import { useParams, useRouter } from 'next/navigation';
+import { useParams } from 'next/navigation';
 import { UserProfile as UserProfileType } from '@/types';
 import { getUserProfile, updateUserBtcAddress } from '@/lib/firebase/firestoreService';
 import { Loader2, UserCircle, Bitcoin, Save } from 'lucide-react';
