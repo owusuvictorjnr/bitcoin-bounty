@@ -1,0 +1,12 @@
+specVersion: "v1"
+serviceId: "bitcoin-bounty"
+location: "us-central1"
+schema:
+  source: "./schema"
+  datasource:
+    postgresql:
+      database: "fdcdb"
+      cloudSql:
+        instanceId: "bitcoin-bounty-fdc"
+      # schemaValidation: "COMPATIBLE"
+connectorDirs: ["./connector"]
