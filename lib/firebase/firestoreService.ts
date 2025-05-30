@@ -1,6 +1,6 @@
 import { db } from './config';
-import { UserProfile, AuditLogEntry, AuditEvent } from '@/types';
-import { doc, setDoc, query, where, orderBy, Timestamp, getDocs, getDoc, updateDoc, serverTimestamp, collection, addDoc, FieldValue } from 'firebase/firestore';
+import { UserProfile, AuditLogEntry } from '@/types';
+import { doc, setDoc, query, where, orderBy, Timestamp, getDocs, getDoc, updateDoc, serverTimestamp, collection, addDoc } from 'firebase/firestore';
 import { v4 as uuidv4 } from 'uuid';
 
 
@@ -38,7 +38,6 @@ export const createUserProfile = async (
 export const addAuditLogEntry = async (
   entryData: Omit<AuditLogEntry, 'id' | 'timestamp'>
 ): Promise<string> => {
-  const id = uuidv4();
   const auditEntry: Omit<AuditLogEntry, 'id'> & { timestamp: any } = {
     ...entryData,
     timestamp: serverTimestamp(),
