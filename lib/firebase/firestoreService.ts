@@ -1,7 +1,6 @@
 import { db } from './config';
 import { UserProfile, AuditLogEntry } from '@/types';
 import { doc, setDoc, query, where, orderBy, Timestamp, getDocs, getDoc, updateDoc, serverTimestamp, collection, addDoc } from 'firebase/firestore';
-import { v4 as uuidv4 } from 'uuid';
 
 
 import { Bounty } from '@/types'; // Ensure Bounty type is imported
