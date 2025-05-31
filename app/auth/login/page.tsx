@@ -23,12 +23,12 @@ export default function LoginPage() {
     try {
       await signInWithEmailAndPassword(auth, email, password);
       router.push(searchParams.get('redirect') || '/');
-    } catch (err: any) {
-      setError(err.message);
-      console.error("Login error:", err);
-    } finally {
-      setLoading(false);
-    }
+    } catch (err: unknown) {
+      if (err instanceof Error) {
+        setError(err.message);
+      } else {
+        setError("An unknown error occurred.");
+      }
   };
 
   return (
@@ -63,4 +63,4 @@ export default function LoginPage() {
       </p>
     </div>
   );
-}
+}}
