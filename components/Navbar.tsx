@@ -32,11 +32,11 @@ export default function Navbar() {
           </Link>
           {userProfile?.role === 'company' && (
             <Link href="/bounties/post" className="hover:text-yellow-400 flex items-center gap-1">
-              <Briefcase size={18} /> Post Challenge
+              <Briefcase className='hidden md:block' size={18} /> Post Challenge
             </Link>
           )}
            <Link href="/audit-log" className="hover:text-yellow-400 flex items-center gap-1">
-              <ShieldCheck size={18}/> Audit Log
+              <ShieldCheck className='hidden md:block' size={18}/> Audit Log
           </Link>
 
           {loading ? (
@@ -56,12 +56,12 @@ export default function Navbar() {
           ) : (
             <>
               <Link href="/auth/login" className="hover:text-yellow-400 flex items-center gap-1">
-                 <LogIn size={18}/> Login
+                 <LogIn className='hidden md:block' size={18}/> Login
               </Link>
               <Link href="/auth/signup"
                 className="bg-green-500 hover:bg-green-600 px-3 py-1.5 rounded text-sm flex items-center gap-1 transition-colors"
               >
-                <UserPlus size={16}/> Sign Up
+                <UserPlus className='hidden md:block' size={16}/> Sign Up
               </Link>
             </>
           )}
