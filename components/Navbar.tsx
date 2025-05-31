@@ -22,12 +22,13 @@ export default function Navbar() {
   return (
     <nav className="bg-gray-800 text-white shadow-md">
       <div className="container mx-auto px-4 py-3 flex justify-between items-center">
-        <Link href="/" className="text-xl font-bold hover:text-yellow-400 transition-colors">
+        <Link href="/" className="text-sm md:text-xl font-bold hover:text-yellow-400 transition-colors">
           ₿ Bounty Platform
         </Link>
         <div className="space-x-3 md:space-x-5 flex items-center">
           <Link href="/" className="hover:text-yellow-400 flex items-center gap-1">
-            <Search size={18}/> Bounties
+            <Search className='hidden md:block' size={18}/>
+             Bounties
           </Link>
           {userProfile?.role === 'company' && (
             <Link href="/bounties/post" className="hover:text-yellow-400 flex items-center gap-1">
