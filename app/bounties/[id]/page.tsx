@@ -142,7 +142,7 @@ export default function BountyDetailsPage() {
             {bounty.status === 'REVIEWING' && <ShieldQuestion size={16} className="mr-2"/>}
             Status: {bounty.status}
         </p>
-         <p className="text-gray-500 flex items-center col-span-1 md:col-span-3"><CalendarDays size={16} className="mr-2 text-gray-400"/> Posted: {format(bounty.createdAt.toDate(), 'PPP')}</p>
+         <p className="text-gray-500 flex items-center col-span-1 md:col-span-3"><CalendarDays size={16} className="mr-2 text-gray-400"/> Posted: {format(bounty.createdAt ? bounty.createdAt.toDate() : "N/A", 'PPP')}</p>
         {bounty.deadline && <p className="text-red-500 flex items-center col-span-1 md:col-span-3"><CalendarDays size={16} className="mr-2"/> Deadline: {format(bounty.deadline.toDate(), 'PPP p')}</p>}
       </div>
 
